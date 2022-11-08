@@ -1,0 +1,63 @@
+html {
+  font-size: 62.5%;
+  font-family: "IBM plex serif", Arial, Helvetica, sans-serif;
+}
+body {
+  margin: 0;
+}
+.nav {
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  background-color: black;
+  justify-content: flex-end;
+  align-items: center;
+}
+ul {
+  margin: 1rem 1.5rem;
+  padding: 0px 10px;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  align-items: center;
+}
+li {
+  margin: 1rem;
+  font-size: 1.5rem;
+}
+.container {
+  display: grid;
+  grid-template: auto auto auto auto / auto auto auto;
+  gap: 7px;
+  grid-template-areas: "header head head" "body head head" "body4 body5 body6" "body7 body8 body9";
+  border: 3px solid white;
+}
+img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.img3 {
+  grid-area: head;
+}
+@media screen and (max-width: 430px) {
+  .nav {
+    justify-content: center;
+    align-items: center;
+  }
+  ul {
+    padding: 0 10px;
+    flex-direction: column;
+  }
+  .container {
+    grid-template: repeat(9, auto) / auto;
+    grid-template-areas: "header" "head" "body" " body2" "body3" " body4" "body5" " body6" "body7" " body8";
+  }
+}
+@media screen and (min-width: 468px) and (max-width: 769px) {
+  .container {
+    grid-template: repeat(5, auto) / repeat(2, auto);
+    grid-template-areas: "header head" "body body2" "body3 body4" "body5 body6" "body7 body8";
+  }
+}
